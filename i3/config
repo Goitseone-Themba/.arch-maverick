@@ -37,23 +37,30 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# keyboard layout
+exec_always --no-startup-id xmodmap xmodmap.txt
+
 # Live wallpaper
 #exec_always --no-startup-id home/goitseone/live-wallpaper.sh 
 
 # Wallpaper
 #exec_always --no-startup-id feh --bg-scale Pictures/Wallpapers/ika-musume-arch-linux-169.png
 #exec_always --no-startup-id feh --bg-scale Pictures/i3Images/WorkView.jpg
-exec_always --no-startup-id feh --bg-scale Pictures/Screenshots/screenshot-20241012-135621Z.png
+exec_always --no-startup-id feh --bg-scale Pictures/i3Images/Tanjiro1.jpg
 
 # Volume control and Brightness control
 exec_always --no-startup-id xbindkeys
+
+# gradular volume control
+bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
+bindsym $mod+XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
 
 #Screenshot 
 #bindsym Print exec --no-startup-id gnome-screenshot -i
 bindsym Print exec --no-startup-id touch "/home/$USER/Pictures/Screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ').png" | maim --format=png "/home/$USER/Pictures/Screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ').png"
 
 #Calculator
-bindcode 148 exec --no-startup-id kcalc
+bindcode 148 exec --no-startup-id gnome-calculator
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
