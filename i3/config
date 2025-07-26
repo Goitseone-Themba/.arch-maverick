@@ -40,6 +40,11 @@ exec --no-startup-id nm-applet
 # keyboard layout
 exec_always --no-startup-id xmodmap xmodmap.txt
 
+# Gaps
+smart_gaps on
+gaps outer -5 
+gaps inner 6
+
 # Live wallpaper
 #exec_always --no-startup-id home/goitseone/live-wallpaper.sh 
 
