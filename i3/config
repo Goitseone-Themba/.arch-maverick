@@ -41,9 +41,9 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id xmodmap xmodmap.txt
 
 # Gaps
-smart_gaps on
-gaps outer -5 
-gaps inner 6
+smart_gaps off
+gaps outer 0 
+gaps inner 8
 
 # Live wallpaper
 #exec_always --no-startup-id home/goitseone/live-wallpaper.sh 
